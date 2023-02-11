@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<!--<head th:fragment="head">-->
+<!--	<meta charset="utf-8" />-->
+<!--	<meta content="ie=edge" http-equiv="x-ua-compatible" />-->
+<!--	<title th:text="${metaTitle} ? ${metaTitle} : 'default title'"></title>-->
+<!--	<link rel="stylesheet" th:href="@{/css/style1.css}" />-->
+
+<!--	<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--	<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+<!--	<title>Mum Sched</title>-->
+
+<!--	&lt;!&ndash; Bootstrap &ndash;&gt;-->
+<!--	<link rel="stylesheet"  th:href="@{/css/bootstrap.min.css}"-->
+<!--		integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">-->
+<!--	<script th:src="@{/js/jquery-1.12.4.min.js}"-->
+<!--		integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"-->
+<!--		crossorigin="anonymous"></script>-->
+<!--	&lt;!&ndash; Include all compiled plugins (below), or include individual files as needed &ndash;&gt;-->
+<!--	<script th:src="@{/js/bootstrap.min.js}"-->
+<!--		integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"-->
+<!--		crossorigin="anonymous"></script>-->
+<!--</head>-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MUM-Schedule</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/cerulean/bootstrap.min.css" integrity="sha512-1rXsIsq9uaj3bxRth2+Mw1slRDxuPzGlfJ8PaLmkO3/OtvCL7jVQrdxaC1VvCmCzKRMdKu0pmbCtqQz/3/xORA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<header th:replace="~{fragments/header :: header}"></header>
+</head>
+<body>
+	<div class="container">
+		<div layout:fragment="content">
+			<h1 th:inline="text">Hello <span th:remove="tag" sec:authentication="name">thymeleaf</span>!</h1>
+			<form th:action="@{/logout}" method="post">
+				<input type="submit" value="Sign Out" />
+			</form>
+		</div>
+	</div>
+
+	<div class="footer text-center" th:fragment="footer">
+		<p> <a href="#"> Terms of Use</a> | <a href="#">What's New</a> | <a href="#">Help</a> </p>
+	</div>
+
+
+	<footer th:replace="~{fragments/footer :: footer}"></footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>

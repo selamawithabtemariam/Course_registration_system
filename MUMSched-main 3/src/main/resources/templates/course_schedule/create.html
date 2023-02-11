@@ -1,0 +1,28 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default">
+
+<head th:replace="fragments1/header :: head"></head>
+<body>
+<div class="row justify-content-center">
+    <div >
+
+        <form id="courseScheduleForm" method="post" th:action="@{/course_schedules/create}" th:object="${courseSchedule}">
+
+            <div>
+                <select id="block" name="block"  >
+                    <option th:each="block : ${blocks}" th:value="${block.id}" th:text="${block.getMonth() + block.getYear()}">
+                    </option>
+                </select>
+                <select id="course" name="course"  >
+                    <option th:each="course : ${courses}" th:value="${course.id}" th:text="${course.getName()}">
+                    </option>
+                </select>
+
+            </div>
+
+            <button class="btn btn-primary btn-xl " id="submitButton" type="submit">Send</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>United Dental Surgery ::: AMS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/cerulean/bootstrap.min.css" integrity="sha512-1rXsIsq9uaj3bxRth2+Mw1slRDxuPzGlfJ8PaLmkO3/OtvCL7jVQrdxaC1VvCmCzKRMdKu0pmbCtqQz/3/xORA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+
+    <div id="page-content">
+        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/mum-sched/course_schedules/create">New Course Schedule</a></li>
+        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/">Back</a></li>
+
+        <table class="table table-responsive table-striped">
+            <thead>
+            <tr>
+                <th>Block</th>
+                <th>Course</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="courseSchedule : ${courseSchedules }">
+                <td th:text="${courseSchedule.getBlock().getMonth()}"/>
+                <td th:text="${courseSchedule.getCourse().getName()}"/>
+                <td><a th:href="@{/course_schedules/edit/{id}(id=${courseSchedule.getId()})}"><button class="btn-sm btn-info">Edit </button> </a>
+                    <a th:href="@{/course_schedules/delete/{id}(id=${courseSchedule.getId()})}"><button class="btn-sm btn-danger">Delete </button> </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <footer th:replace="~{fragments/footer :: footer}"></footer>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
