@@ -1,1 +1,3 @@
-nothing to be written here
+ user_id    enabled                password                                                           role              username
+ 1           true                 $2a$10$7sLkYHEBUXbmvA/Zk9E0C./mBJVt2npvMlr9/dBNPDi0h.b.H5VaK        ROLE_ADMIN        admin@miu.edu
+ 
