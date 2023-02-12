@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/default">
+
+<!--<head th:replace="fragments1/header :: head"></head>-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MUM-Schedule</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/cerulean/bootstrap.min.css" integrity="sha512-1rXsIsq9uaj3bxRth2+Mw1slRDxuPzGlfJ8PaLmkO3/OtvCL7jVQrdxaC1VvCmCzKRMdKu0pmbCtqQz/3/xORA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<header th:replace="~{fragments/header :: header}"></header>
+</head>
+<body>
+	<div class="container" style="width: 300px;">
+		<div class="text-center">
+			<div class="alert alert-danger" role="alert" th:if="${param.error}">
+				Invalid username and password.</div>
+			<div class="alert alert-info" role="alert" th:if="${param.logout}">
+				You have been logged out.
+			</div>
+			<div class="login-greeting">Welcome to MIU course registration system</div>
+			<form th:action="@{/login}" method="post">
+				<p>
+					<input type="email" class="form-control" placeholder="Email" name="username" />
+				</p>
+				<p>
+					<input type="password" class="form-control" placeholder="Password" name="password" />
+				</p>
+				<p>
+					<input type="submit" class="btn btn-primary mb-4" value="Sign In" />
+				</p>
+			</form>
+
+		</div>
+	</div>
+	<footer th:replace="~{fragments/footer :: footer}"></footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+
+</html>
