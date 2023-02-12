@@ -31,12 +31,6 @@ public class MumSchedApplication implements CommandLineRunner {
 		System.out.println("Hello World");
 
 
-		Student student = new Student();
-		student.setFirstName("fili");
-		student.setLastName("issak");
-		student.setEmail("pass@miu.edu");
-
-
 
 
 
