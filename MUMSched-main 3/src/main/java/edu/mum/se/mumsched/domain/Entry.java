@@ -2,7 +2,7 @@ package edu.mum.se.mumsched.domain;
 
 import java.util.List;
 
-//import edu.mum.se.mumsched.utils.Utils;
+import edu.mum.se.mumsched.utils.Utils;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

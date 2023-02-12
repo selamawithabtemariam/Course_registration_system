@@ -1,6 +1,6 @@
 package edu.mum.se.mumsched.domain;
 
-//import edu.mum.se.mumsched.utils.Utils;
+import edu.mum.se.mumsched.utils.Utils;
 import jakarta.persistence.*;
 
 import java.util.List;
